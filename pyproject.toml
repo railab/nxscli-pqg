@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools >= 61.2"]
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = "nxscli-pqg"
+version = "1.0.0"
+authors = [{name = "raiden00", email = "raiden00@railab.me"}]
+description = "Nxscli PyQtGraph extension"
+license = {text = "Apache-2.0"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+         "nxscli>=1.0.1",
+         "pyqtgraph>=0.13",
+         "PyQt6>=6.0",
+         "click>=8.1"
+]
+classifiers = [
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Embedded Systems",
+  "Operating System :: OS Independent",
+]
+keywords = [
+  "nuttx",
+  "nxscli",
+]
+
+[project.urls]
+Changelog = "https://github.com/railab/nxscli-pqg/blob/master/CHANGES.md"
+Homepage = "https://github.com/railab/nxscli-pqg"
+
+[project.entry-points."nxscli.extensions"]
+plugins = "nxscli_pqg.ext_plugins"
+commands = "nxscli_pqg.ext_commands"
+
+[tool.black]
+line-length = 79
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 79
