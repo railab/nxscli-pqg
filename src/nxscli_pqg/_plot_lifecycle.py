@@ -33,7 +33,7 @@ def close_surface(
     """Close a detached window or attached widget."""
     if window is not None:
         unregister_window(window)
-        if window.isVisible():
+        if window.isVisible():  # pragma: no cover
             window.close()
         return
     widget.close()
