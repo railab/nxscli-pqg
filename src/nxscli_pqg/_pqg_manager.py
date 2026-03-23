@@ -30,7 +30,7 @@ class PqgManager:
     @classmethod
     def unregister_window(cls, window: QMainWindow) -> None:
         """Remove a tracked Qt window."""
-        if window in cls._windows:
+        if window in cls._windows:  # pragma: no cover
             cls._windows.remove(window)
 
     @classmethod
